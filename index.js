@@ -1,6 +1,4 @@
-let isPlaying = false;
-
-const render = () => {
+const render = (isPlaying = false) => {
   const playButton = document.querySelector('.button-play');
   const inputs = document.querySelectorAll('.mainboard input');
   const mainContainer = document.querySelector('.main-container');
@@ -10,33 +8,32 @@ const render = () => {
   mainContainer.hidden = !isPlaying;
 };
 
-
-
 const events = () => {
+
   const playButton = document.querySelector('.button-play');createPlayers
-  playButton.addEventListener('click', () => isPlaying ? stop() : play());
+  
+  const click$ = Rx.Observable.fromEvent(playButton, 'click');  
+  const cancel$ = click$.mapTo(false); 
+  const start$ = Rx.Observable.of(true, false).zip(Rx.Observable.timer(0, 3000), x => x );
+  const play$ = click$.concatMap(() => start$.merge(cancel$)).take(2).do(isPlaying => isPlaying ? play() : stop());
+
+  const subscribe = () => {
+    play$.subscribe( {
+      next: render,
+      complete: subscribe
+    });
+  };
+
+  subscribe();
 };
 
 const init = () => {
   isPlaying = false;
   window.onload = () => {
     events();
-    render();
+    render(false);
   };
 };
-
-const checkTimeout = (function() {
-  let timeout = null;
-  return function(newTimeout) {
-    if (timeout) {
-      clearTimeout(timeout);
-      timeout = null;
-    }
-    if (newTimeout) {
-      timeout = newTimeout;
-    }
-  }
-})();
 
 const createPlayer = ({color, name, numDices}) => {
   const player = document.createElement('div');
@@ -57,12 +54,12 @@ const createPlayers = () => {
                                    .map(n => `Player${n}`);
   
   const color$ = Rx.Observable.pairs(colors)
-                              .map(([key, _]) => (key))
-                              .repeat(Infinity);
+                              .map(([key, _]) => key)
+                              .repeat(20);
   
   const player$ = Rx.Observable.zip(namePlayer$, color$, (name, color) => createPlayer({name, color, numDices}))
                                .do(player => main.appendChild(player))
-                               .subscribe({complete: () => console.log('End!')});
+                               .subscribe();
 };
 
 const reset = () => {
@@ -70,22 +67,9 @@ const reset = () => {
   main.innerHTML = '';
 };
 
-const play = () => {
-  let timeout = null;
-  if(isPlaying) return;
-  isPlaying = true;
-  createPlayers();
-  checkTimeout(setTimeout(stop, 3000));
-  render();
-};
+const play = createPlayers;
 
-const stop = () => {
-  if (!isPlaying) return;
-  isPlaying = false;
-  checkTimeout();
-  render();
-  reset();
-};
+const stop = reset;
 
 
 init();

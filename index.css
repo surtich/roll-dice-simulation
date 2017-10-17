@@ -1,0 +1,71 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Questrial;
+  font-size: 15px;
+  min-height: 200vh;
+  margin: 0;
+}
+
+header {
+  margin: 1em auto; 
+  padding: 1em;
+  width: 75%;
+  border: 2px solid rgb(237, 237, 237);
+  border-radius: 20px;
+}
+
+.mainboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 45px;
+}
+.mainboard-item {
+  flex: 0 1 33%;
+}
+
+.mainboard .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(118, 119, 119);
+  border: 1px solid rgb(237, 237, 237);
+  outline: 0px;
+  background-color: rgb(245, 245, 245);
+  cursor: pointer;
+  height: 2em;
+  max-width: 100px;
+}
+
+.mainboard .button:hover {
+  color: rgb(121, 151, 165);
+}
+
+.play-text:after {
+  content: "run";
+}
+
+.playing .play-text:after {
+  content: "stop";
+  color: rgb(121, 151, 165);
+}
+
+.play-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1em;
+  width: 1em;
+  margin-left: 5px;
+}

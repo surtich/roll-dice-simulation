@@ -15,12 +15,26 @@ body {
   margin: 0;
 }
 
-header {
-  margin: 1em auto; 
-  padding: 1em;
+.container {
+  margin: 1em auto;
   width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > * + * {
+  margin-top: 2em;
+}
+
+header, main {
+  padding: 1em;
   border: 2px solid rgb(237, 237, 237);
   border-radius: 20px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .mainboard {
@@ -68,4 +82,13 @@ input {
   height: 1em;
   width: 1em;
   margin-left: 5px;
+}
+
+.player {
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid;
+  border-radius: 20px;
+  min-width: 100px;
+  text-align: center;
 }

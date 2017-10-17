@@ -1,0 +1,122 @@
+/*
+
+  COLORS
+  Better default colors for the web
+
+*/
+/* 
+
+   VARIABLES
+
+   - Cool
+   - Warm
+   - Gray Scale
+
+*/
+/*
+
+   SKINS
+   - Backgrounds
+   - Colors
+   - Border colors
+   - SVG fills
+   - SVG Strokes
+
+*/
+
+
+/* Backgrounds */
+.bg-navy { background-color: #001F3F; }
+.bg-blue { background-color: #0074D9; }
+.bg-aqua { background-color: #7FDBFF; }
+.bg-teal { background-color: #39CCCC; }
+.bg-olive { background-color: #3D9970; }
+.bg-green { background-color: #2ECC40; }
+.bg-lime { background-color: #01FF70; }
+.bg-yellow { background-color: #FFDC00; }
+.bg-orange { background-color: #FF851B; }
+.bg-red { background-color: #FF4136; }
+.bg-fuchsia { background-color: #F012BE; }
+.bg-purple { background-color: #B10DC9; }
+.bg-maroon { background-color: #85144B; }
+.bg-white { background-color: #FFFFFF; }
+.bg-gray { background-color: #AAAAAA; }
+.bg-silver { background-color: #DDDDDD; }
+.bg-black { background-color: #111111; }
+/* Colors */
+.navy { color: #001F3F; }
+.blue { color: #0074D9; }
+.aqua { color: #7FDBFF; }
+.teal { color: #39CCCC; }
+.olive { color: #3D9970; }
+.green { color: #2ECC40; }
+.lime { color: #01FF70; }
+.yellow { color: #FFDC00; }
+.orange { color: #FF851B; }
+.red { color: #FF4136; }
+.fuchsia { color: #F012BE; }
+.purple { color: #B10DC9; }
+.maroon { color: #85144B; }
+.white { color: #FFFFFF; }
+.silver { color: #DDDDDD; }
+.gray { color: #AAAAAA; }
+.black { color: #111111; }
+/* Border colors 
+
+   Use with another border utility that sets border-width and style 
+   i.e .border { border-width: 1px); border-style: solid); }     
+*/
+.border--navy { border-color: #001F3F; }
+.border--blue { border-color: #0074D9; }
+.border--aqua { border-color: #7FDBFF; }
+.border--teal { border-color: #39CCCC; }
+.border--olive { border-color: #3D9970; }
+.border--green { border-color: #2ECC40; }
+.border--lime { border-color: #01FF70; }
+.border--yellow { border-color: #FFDC00; }
+.border--orange { border-color: #FF851B; }
+.border--red { border-color: #FF4136; }
+.border--fuchsia { border-color: #F012BE; }
+.border--purple { border-color: #B10DC9; }
+.border--maroon { border-color: #85144B; }
+.border--white { border-color: #FFFFFF; }
+.border--gray { border-color: #AAAAAA; }
+.border--silver { border-color: #DDDDDD; }
+.border--black { border-color: #111111; }
+
+.navy-complementary { color: hsla(210, 100%, 75%, 1.0); }
+.blue-complementary { color: hsla(208, 100%, 85%, 1.0); }
+.aqua-complementary { color: hsla(197, 100%, 20%, 1.0); }
+.teal-complementary { color: hsla(0, 100%, 75%, 1.0); }
+.olive-complementary { color: hsla(153, 43%, 15%, 1.0); }
+.green-complementary { color: hsla(127, 63%, 15%, 1.0); }
+.lime-complementary { color: hsla(146, 100%, 20%, 1.0); }
+.yellow-complementary { color: hsla(52, 100%, 20%, 1.0); }
+.orange-complementary { color: hsla(28, 100%, 20%, 1.0); }
+.red-complementary { color: hsla(3, 100%, 25%, 1.0); }
+.fuchsia-complementary { color: hsla(314, 88%, 21%, 1.0); }
+.purple-complementary { color: hsla(292, 88%, 82%, 1.0); }
+.maroon-complementary { color: hsla(331, 74%, 70%, 1.0); }
+.white-complementary { color: #444; }
+.silver-complementary { color: black; }
+.gray-complementary { color: #DDDDDD; }
+.black-complementary { color: #DDDDDD; }
+
+.border-navy-complementary { border-color: hsla(210, 100%, 75%, 1.0); }
+.border-blue-complementary { border-color: hsla(208, 100%, 85%, 1.0); }
+.border-aqua-complementary { border-color: hsla(197, 100%, 20%, 1.0); }
+.border-teal-complementary { border-color: hsla(0, 100%, 75%, 1.0); }
+.border-olive-complementary { border-color: hsla(153, 43%, 15%, 1.0); }
+.border-green-complementary { border-color: hsla(127, 63%, 15%, 1.0); }
+.border-lime-complementary { border-color: hsla(146, 100%, 20%, 1.0); }
+.border-yellow-complementary { border-color: hsla(52, 100%, 20%, 1.0); }
+.border-orange-complementary { border-color: hsla(28, 100%, 20%, 1.0); }
+.border-red-complementary { border-color: hsla(3, 100%, 25%, 1.0); }
+.border-fuchsia-complementary { border-color: hsla(314, 88%, 21%, 1.0); }
+.border-purple-complementary { border-color: hsla(292, 88%, 82%, 1.0); }
+.border-maroon-complementary { border-color: hsla(331, 74%, 70%, 1.0); }
+.border-white-complementary { border-color: #444; }
+.border-silver-complementary { border-color: black; }
+.border-gray-complementary { border-color: #DDDDDD; }
+.border-black-complementary { border-color: #DDDDDD; }
+

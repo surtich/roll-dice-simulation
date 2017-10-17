@@ -3,27 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Roll Dice Simulation</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
     <link href="base64.css" rel="stylesheet" type="text/css" />
+    <link href="colors.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/rxjs/bundles/Rx.min.js"></script>
   </head>
   <body>
-    <script src="index.js"></script>
-    <header>
-      <div class="mainboard">
-        <div class="mainboard-item">
-          <label for="players">Players:</label>
-          <input type="number" class="input-players" placeholder="Players" value="5"/> 
+    <div class="container">
+      <header>
+        <div class="mainboard">
+          <div class="mainboard-item">
+            <label for="players">Players:</label>
+            <input type="number" class="input-players" placeholder="Players" value="15"/> 
+          </div>
+          <div class="mainboard-item">
+            <label for="dices">Dices:</label>
+            <input type="text" class="input-dices" placeholder="Dices" value="2" />
+          </div>
+          <div class="mainboard-item button button-play">
+            <span class="play-text"></span>
+            <span class="play-icon"></span>
+          </div>
         </div>
-        <div class="mainboard-item">
-          <label for="dices">Dices:</label>
-          <input type="text" class="input-dices" placeholder="Dices" value="2" />
-        </div>
-        <div class="mainboard-item button button-play">
-          <span class="play-text"></span>
-          <span class="play-icon"></span>
-        </div>
+      </header>
+      <div class="main-container">
+        <main>
+        </main>
       </div>
-    </header>
+    </div>
+    <script src="color.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

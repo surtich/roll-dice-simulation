@@ -6,3 +6,5 @@
 * Organized in files andfolders.
 * Added dice roll animation.
 * Implemented winner dice roll.
+* Completed game.
+* Added README.md

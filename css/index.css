@@ -95,6 +95,18 @@ input {
   flex-grow: 1;  
 }
 
+.player button {
+  margin: 1em;
+  padding: 0.5em 1.5em;
+  font-size: 1.5em;
+  font-family: "Bitter",serif;
+  line-height: 1.8;
+  box-shadow: none;
+  border-radius: 0;
+  background: rgba(0,0,0,0);
+  border: solid 5px;
+}
+
 .dice-container {
   min-width: 200px;
   min-height: 150px; 

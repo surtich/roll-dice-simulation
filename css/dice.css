@@ -59,6 +59,21 @@
     font-size: 5em;
     background-color: white;
   }
+
+  .dice-face.selected {
+    background-color: gold;
+  }
+
+  .dice-face.win {
+    transition: 1s;
+    background-color: green;
+  }
+
+  .dice-face.lost {
+    transition: 1s;
+    background-color: red;
+  }
+
   
   .dice-face:nth-child(1) {
     transform: translate(-50%, -50%) translateZ(0.5em);

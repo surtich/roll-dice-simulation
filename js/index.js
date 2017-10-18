@@ -33,10 +33,7 @@ const reset = () => {
 
 const play = () => {
   createPlayers();
-  const dices = document.getElementsByClassName("dice");
-  [].forEach.call(dices, dice => dice.onclick = rollDice(dice));
   render(true);
-  
 };
 
 const stop = () => {
@@ -45,5 +42,7 @@ const stop = () => {
     [].forEach.call(dices, dice => dice.onclick = undefined);
     reset();
 };
+
+const won = xs => xs.reduce( (s, x) => s + x, 0) === 5 ? true : false; 
 
 init();

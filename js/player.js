@@ -63,5 +63,19 @@ const createPlayers = () => {
   
   const player$ = Rx.Observable.zip(namePlayer$, color$, (name, color) => createPlayer({name, color, numDices}))
                                .do(player => main.appendChild(player))
-                               .subscribe();
+                               .subscribe({
+                                 complete: () => {
+                                   const dices = document.querySelectorAll('.dice');
+                                   const buttons = document.querySelectorAll('.player button');
+                                   const playerClick$ = Rx.Observable.fromEvent(buttons, 'click')
+                                                                  .mapTo(1)
+                                                                  .scan( (s, x) => s + x, 0)
+                                                                  .filter(s => s % numPlayers === 0)
+                                                                  .delay(10000)
+                                                                  .subscribe( () => {
+                                                                    Rx.Observable.from(dices).subscribe( dice => rollDice({dice, randFace: 0, time:1000, selected: false}))
+                                                                    Rx.Observable.from(buttons).subscribe( btn => btn.disabled = false)
+                                                                  });
+                                 }
+                               });
 };

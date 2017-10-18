@@ -43,6 +43,6 @@ const stop = () => {
     reset();
 };
 
-const won = xs => xs.reduce( (s, x) => s + x, 0) === 5 ? true : false; 
+const won = xs => xs.reduce( (s, x) => s + x + 1, 0) === 7 ? true : false; 
 
 init();

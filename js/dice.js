@@ -25,7 +25,7 @@ const faceRot = [
   "rotate3d(0, 1, 0, 90deg)"
 ];
 
-const rollDice = ({dice, randFace, time}) => {
+const rollDice = ({dice, randFace, time, selected = true}) => {
 
   const faces = dice.getElementsByClassName("dice-face");
 
@@ -36,7 +36,7 @@ const rollDice = ({dice, randFace, time}) => {
   }
 
   dice.style.transform = "rotate3d(1, 0, 0, " + Math.random() * 360 +  "deg) rotate3d(0, 1, 0, " + Math.random() * 360 +  "deg) rotate3d(0, 0, 1, " + Math.random() * 360 +  "deg)";
-  addFaceDiceClass({dice, randFace, className: 'selected', time});  
+  selected && addFaceDiceClass({dice, randFace, className: 'selected', time});  
 };
 
 const addFaceDiceClass = ({dice, randFace, className, time}) => {

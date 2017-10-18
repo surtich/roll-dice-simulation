@@ -7,6 +7,7 @@
     <link href="css/index.css" rel="stylesheet" type="text/css" />
     <link href="css/base64.css" rel="stylesheet" type="text/css" />
     <link href="css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="css/dice.css" rel="stylesheet" type="text/css" />
     <script src="lib/Rx.min.js"></script>
   </head>
   <body>
@@ -15,11 +16,11 @@
         <div class="mainboard">
           <div class="mainboard-item">
             <label for="players">Players:</label>
-            <input type="number" class="input-players" placeholder="Players" value="15"/> 
+            <input type="number" class="input-players" placeholder="Players" value="5" min="2" max="40"/> 
           </div>
           <div class="mainboard-item">
             <label for="dices">Dices:</label>
-            <input type="text" class="input-dices" placeholder="Dices" value="2" />
+            <input type="number" class="input-dices" placeholder="Dices" value="2"  min="1" max="5"/>
           </div>
           <div class="mainboard-item button button-play">
             <span class="play-text"></span>
@@ -32,6 +33,7 @@
         </main>
       </div>
     </div>
+    <script src="js/dice.js"></script>
     <script src="js/player.js"></script>
     <script src="js/color.js"></script>
     <script src="js/index.js"></script>

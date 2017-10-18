@@ -10,21 +10,13 @@ const render = (isPlaying = false) => {
 
 const events = () => {
 
-  const playButton = document.querySelector('.button-play');createPlayers
+  const playButton = document.querySelector('.button-play');
   
   const click$ = Rx.Observable.fromEvent(playButton, 'click');  
-  const cancel$ = click$.mapTo(false); 
-  const start$ = Rx.Observable.of(true, false).zip(Rx.Observable.timer(0, 3000), x => x );
-  const play$ = click$.concatMap(() => start$.merge(cancel$)).take(2).do(isPlaying => isPlaying ? play() : stop());
-
-  const subscribe = () => {
-    play$.subscribe( {
-      next: render,
-      complete: subscribe
-    });
-  };
-
-  subscribe();
+  const start$ = isPlaying => click$.mapTo(isPlaying).first();
+  const play$ = start$(true).expand(isPlaying => start$(!isPlaying));
+  
+  play$.subscribe(isPlaying => isPlaying ? play() : stop());
 };
 
 const init = () => {
@@ -39,8 +31,19 @@ const reset = () => {
   main.innerHTML = '';
 };
 
-const play = createPlayers;
+const play = () => {
+  createPlayers();
+  const dices = document.getElementsByClassName("dice");
+  [].forEach.call(dices, dice => dice.onclick = rollDice(dice));
+  render(true);
+  
+};
 
-const stop = reset;
+const stop = () => {
+    render(false);
+    const dices = document.getElementsByClassName("dice");
+    [].forEach.call(dices, dice => dice.onclick = undefined);
+    reset();
+};
 
 init();

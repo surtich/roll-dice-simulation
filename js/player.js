@@ -1,9 +1,24 @@
+const createName = (namePlayer) => {
+  const name = document.createElement('span');
+  name.innerHTML = namePlayer;
+  return name;
+};
+
+const createDices = (numDices) => {
+  const container = document.createElement('div');
+  container.className = 'dices-container';
+  Array(numDices).fill().forEach(() => container.appendChild(createDice()));
+  return container;
+};
+
+
 const createPlayer = ({color, name, numDices}) => {
   const player = document.createElement('div');
   player.className = `player ${color}-complementary border-${color}-complementary bg-${color}`;
-  player.innerHTML = name;
+  player.appendChild(createName(name));
+  player.appendChild(createDices(numDices));
   return player;
-}
+};
 
 const createPlayers = () => {
   const inputPlayer = document.querySelector('.input-players');

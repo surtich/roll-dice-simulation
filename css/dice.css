@@ -1,0 +1,110 @@
+.dice, .dice *, .dice *:before {
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    transition: all 1s;
+    position: absolute;
+    top: 50%; left: 50%;
+  }
+  
+  /*
+  .dice {
+    transform: rotateY(0deg);
+    animation: ani 19s linear infinite;
+  }
+  
+  @keyframes ani {
+    to { 
+      transform: rotateY(360deg);
+    }
+  }
+  */
+  @keyframes faceOne {
+    to {
+      transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+    }
+  }
+  @keyframes faceTwo {
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+  @keyframes faceThree {
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+  @keyframes faceFour {
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+  @keyframes faceFive {
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+  @keyframes faceSix {
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+  .dice-face {
+    position: absolute;
+    border: solid rgba(255, 255, 255, 0.5);
+    width: 1em;
+    height: 1em;
+    color: black;
+    line-height: 1em;
+    text-align: center;
+    font-size: 5em;
+    background-color: white;
+  }
+  
+  .dice-face:nth-child(1) {
+    transform: translate(-50%, -50%) translateZ(0.5em);
+  }
+  
+  .dice-face:nth-child(2) {
+    transform: translate(-50%, -50%) translateZ(-0.5em);
+  }
+  
+  .dice-face:nth-child(3) {
+    transform: translate(-50%, -50%) translateY(0.5em) rotate3d(1, 0, 0, 90deg);
+  }
+  
+  .dice-face:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(-0.5em) rotate3d(1, 0, 0, 90deg);
+  }
+  
+  .dice-face:nth-child(5) {
+    transform: translate(-50%, -50%) translateX(0.5em) rotate3d(0, 1, 0, 90deg);
+  }
+  
+  .dice-face:nth-child(6) {
+    transform: translate(-50%, -50%) translateX(-0.5em) rotate3d(0, 1, 0, 90deg);
+  }
+  
+  .dice-face:nth-child(1)::after {
+    content: "⚀";
+  }
+  
+  .dice-face:nth-child(2)::after {
+    content: "⚁";
+  }
+  
+  .dice-face:nth-child(3)::after {
+    content: "⚂";
+  }
+  
+  .dice-face:nth-child(4)::after {
+    content: "⚃";
+  }
+  
+  .dice-face:nth-child(5)::after {
+    content: "⚄";
+  }
+  
+  .dice-face:nth-child(6)::after {
+    content: "⚅";
+  }
+  

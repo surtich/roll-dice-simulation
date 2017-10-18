@@ -89,6 +89,14 @@ input {
   margin: 1em;
   border: 1px solid;
   border-radius: 20px;
-  min-width: 100px;
   text-align: center;
+  overflow: hidden;
+  perspective: 100em;
+  flex-grow: 1;  
+}
+
+.dice-container {
+  min-width: 200px;
+  min-height: 150px; 
+  position: relative;
 }
